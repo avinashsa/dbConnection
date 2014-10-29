@@ -11,9 +11,9 @@ public class Item {
 			 Amount = inamt;  
 		}
 
-		public addItemFromStdin() {
+		public void addItemFromStdin() {
+			
 			CommonUtil  accUtil = new CommonUtil();
 			
-
 		}
 }
