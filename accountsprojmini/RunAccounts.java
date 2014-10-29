@@ -1,5 +1,6 @@
 package accountsprojmini;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class RunAccounts {
 	
@@ -12,7 +13,8 @@ public class RunAccounts {
 		while(1 == 1)
 		{
 			/*			System.out.println(" You Entered :" + nextItem ); */
-
+			System.out.println();
+			System.out.println("MAIN MENU");
 			System.out.println("Please select what you want to do");
 			System.out.println("1. Enter Item");
 			System.out.println("2. Delete Item");
@@ -22,15 +24,40 @@ public class RunAccounts {
 			String choice = accUtil.getUserInput("Please enter you next item");
 
 			switch (choice) {
-				case "1": System.out.println("you chose enter");
+				case "1": 
+					Item newTransaction = new Item();
+					accountItems.add(newTransaction);
+					newTransaction.addItemFromStdin();
 				break;
-				case "2": System.out.println("you chose delte");
+
+
+				case "2": System.out.println("Cant delete yet");
 				break;
-				case "3": System.out.println("you chose print list");
+
+
+				case "3":  int listSize = 0;
+							System.out.println("currently holding " + accountItems.size()+ " items");
+						while (listSize  < accountItems.size())	{
+							Item currItem = accountItems.get(listSize);
+							System.out.println("******************************");
+							System.out.println( "Trans Date   = " + Integer.toString(listSize + 1) + currItem.getTransDate());
+							System.out.println( "Trans Amount = " + Integer.toString(listSize + 1) + currItem.getAmount());	
+							System.out.println("******************************");
+							listSize++;
+						}
+
+				System.out.println();
 				break;
+
+
+
 				case "4": System.out.println("you chose exit");
 					System.exit(0);
 				break;
+
+
+
+
 				default: System.out.println("Invalid Chocie");
 				break;
 			}
